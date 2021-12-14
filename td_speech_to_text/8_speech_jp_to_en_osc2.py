@@ -56,6 +56,12 @@ class MicrophoneStream(object):
             rate=self._rate,
             input=True,
             frames_per_buffer=self._chunk,
+
+            ##### 2021/12/14 #####
+            ## オーディオデバイスのエラーが出ている人は、以下の数字(2と指定してある箇所)を変えてみて試してみてください
+            ## input_device_index=2,
+            ##### 2021/12/14 #####
+            
             # Run the audio stream asynchronously to fill the buffer object.
             # This is necessary so that the input device's buffer doesn't
             # overflow while the calling thread makes network requests, etc.
